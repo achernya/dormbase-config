@@ -45,3 +45,34 @@ Fedora's `mailman` package automatically configured httpd.  Restart it with
 You should now be able to navigate to http://YOUR_SERVER/pipermail and
 see an "Index of /pipermail" page.
 
+Configuring Mailman
+===================
+
+Now that `mailman` is installed, it has to be configured to be useful.
+This section details how to do so.
+
+Initial bootstrapping
+---------------------
+
+The `mailman` installation has an overall password that must be set
+for all administrator operations.  Note that other administrators
+accounts can be created.  Run:
+
+    /usr/lib/mailman/bin/mmsitepass <your-site-password>
+
+Next, instruct `mailman` to update its data:
+
+    /usr/lib/mailman/bin/update
+
+Finally, create a special `mailman` list:
+
+    /usr/lib/mailman/bin/newlist mailman
+
+`mailman` can now be started and enabled:
+
+    systemctl enable mailman.service
+    systemctl start mailman.service
+
+Navigating to http://YOUR_SERVER/pipermail should now show a `mailman`
+directory.
+
