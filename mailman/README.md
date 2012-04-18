@@ -14,6 +14,8 @@ Requirements
  * MIT hostname and static IP address.  If your server is in your
    dorm, request a hostname and IP by going to http://rcc.mit.edu/
 
+ * Apache `httpd`.  This can be installed with `yum -y install httpd`
+
 Installing Mailman and Postfix
 ------------------------------
 
@@ -35,4 +37,11 @@ Next, install `mailman`
 Once that completes, immediately re-configure the permissions by running
 
     /usr/lib/mailman/bin/check_perms -f
+
+Fedora's `mailman` package automatically configured httpd.  Restart it with
+
+    systemctl restart httpd.service
+
+You should now be able to navigate to http://YOUR_SERVER/pipermail and
+see an "Index of /pipermail" page.
 
