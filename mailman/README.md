@@ -22,9 +22,17 @@ larger community but a noticeably worse security record.  Therefore,
 we recommend `postfix`.  To cleanly remove `sendmail` and replace it
 with `postfix`, run:
 
-    yum shell <<EOF
-    remove sendmail
-    install postfix
-    run
-    EOF
+     yum shell <<EOF
+     remove sendmail
+     install postfix
+     run
+     EOF
+
+Next, install `mailman`
+
+    yum -y install mailman
+
+Once that completes, immediately re-configure the permissions by running
+
+    /usr/lib/mailman/bin/check_perms -f
 
