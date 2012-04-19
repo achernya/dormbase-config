@@ -1,0 +1,11 @@
+--- /etc/postfix/main.cf.dist	2012-04-18 20:10:25.451783835 -0400
++++ /etc/postfix/main.cf	2012-04-18 20:10:41.182633548 -0400
+@@ -383,7 +383,7 @@
+ # "postfix reload" to eliminate the delay.
+ #
+ #alias_maps = dbm:/etc/aliases
+-alias_maps = hash:/etc/aliases
++alias_maps = hash:/etc/aliases, hash:/etc/mailman/aliases
+ #alias_maps = hash:/etc/aliases, nis:mail.aliases
+ #alias_maps = netinfo:/aliases
+ 

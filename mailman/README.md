@@ -98,3 +98,20 @@ to generate `/etc/mailman/aliases/` and `/etc/mailman/aliases.db`.
 
 Making Postfix Mailman-aware
 ----------------------------
+
+Similarly, `postfix` needs to know that mail needs to be delivered to
+`mailman`.  This is done by appending
+
+    hash:/etc/mailman/aliases
+
+to the `alias_maps` line of `/etc/postfix/main.cf`.
+
+For reference, `main.cf.patch` is provided to ensure the modification
+is correct.
+
+Finally, run
+
+    systemctl restart postfix.service
+
+to have `postfix` notice the configuration changes.
+
