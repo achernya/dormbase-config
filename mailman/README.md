@@ -76,3 +76,25 @@ Finally, create a special `mailman` list:
 Navigating to http://YOUR_SERVER/pipermail should now show a `mailman`
 directory.
 
+Making Mailman Postfix-aware
+----------------------------
+
+`mailman` needs to be told that it is going to be working in
+cooperation with `postfix`.  This is done by setting
+
+    MTA = 'Postfix'
+
+in `/usr/lib/mailman/Mailman/mm_cfg.py` (also accessible though
+`/etc/mailman/mm_cfg.py`)
+
+For reference, `mm_cfg.py.patch` is provided to ensure the
+modification is correct.
+
+Finally, run
+
+    /usr/lib/mailman/bin/genaliases
+
+to generate `/etc/mailman/aliases/` and `/etc/mailman/aliases.db`.
+
+Making Postfix Mailman-aware
+----------------------------

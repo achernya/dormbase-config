@@ -1,0 +1,8 @@
+--- /usr/lib/mailman/Mailman/mm_cfg.py.dist	2011-12-01 05:38:38.000000000 -0500
++++ /usr/lib/mailman/Mailman/mm_cfg.py	2012-04-18 19:50:06.201268647 -0400
+@@ -98,3 +98,5 @@
+ 
+ # Note - if you're looking for something that is imported from mm_cfg, but you
+ # didn't find it above, it's probably in Defaults.py.
++
++MTA = 'Postfix'
