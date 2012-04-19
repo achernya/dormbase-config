@@ -93,8 +93,10 @@ modification is correct.
 Finally, run
 
     /usr/lib/mailman/bin/genaliases
+    chown mailman:mailman /etc/mailman/aliases{,.db}
 
-to generate `/etc/mailman/aliases/` and `/etc/mailman/aliases.db`.
+to generate `/etc/mailman/aliases` and `/etc/mailman/aliases.db` with
+the correct permissions.
 
 Making Postfix Mailman-aware
 ----------------------------
