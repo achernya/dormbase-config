@@ -42,7 +42,7 @@ Fedora's `mailman` package automatically configured httpd.  Restart it with
 
     systemctl restart httpd.service
 
-You should now be able to navigate to http://YOUR_SERVER/pipermail and
+You should now be able to navigate to http://YOUR_SERVER/pipermail/ and
 see an "Index of /pipermail" page.
 
 Configuring Mailman
@@ -73,7 +73,7 @@ Finally, create a special `mailman` list:
     systemctl enable mailman.service
     systemctl start mailman.service
 
-Navigating to http://YOUR_SERVER/pipermail should now show a `mailman`
+Navigating to http://YOUR_SERVER/pipermail/ should now show a `mailman`
 directory.
 
 Making Mailman Postfix-aware
